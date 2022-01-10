@@ -48,14 +48,6 @@ public class Battle {
         System.out.println("ディーラーの最初の点数は"+ enemyPoint);
     }
 
-    void natural(){
-        if (playerPoint == 21);{
-        System.out.println("ナチュラルブラックジャック！！");
-        System.out.println("あなたの勝利！！！！");
-        }
-    }
-
-
     /**プレイクラス
      * ヒットかスタンドを選び、半角の0か1で選択
      * ヒットを選んだ場合は、プレイヤーのカードが一枚増える
@@ -73,7 +65,7 @@ public class Battle {
             if (judge.equals("0")) {//0＿ヒットを選択した場合
                 playerCard[k] = random.nextInt(9) +1;
                 p_math += 1;
-                if (playerCard[k] == 1) {
+                if (playerCard[k] == 1) {//1を11として扱う
                     playerCard[k] = 11;
                 }
                 playerPoint += playerCard[k];
