@@ -51,8 +51,19 @@ public class Battle {
                     break;
                 }
             }
-            
-            
+            if (judge.equals("1")) {
+                System.out.println("あなた"+p_math+"枚　　　合計点＿"+playerPoint);
+                for (int i = 1; enemyPoint < 17; i++) {
+                    enemyCard[i] = random.nextInt(11) ;
+                    e_math += 1;
+                    enemyPoint += enemyCard[i];
+                    System.out.println("ディーラー"+e_math+"枚　合計点＿"+enemyPoint);
+                    if(enemyPoint >= 22){
+                        System.out.println("バーストしました。あなたの勝ち！！");
+                        break;
+                    }
+                }
+            }
         }
     }
 
