@@ -51,6 +51,7 @@ public class Battle {
                     break;
                 }
             }
+            
             if (judge.equals("1")) {
                 System.out.println("あなた"+p_math+"枚　　　合計点＿"+playerPoint);
                 for (int i = 1; enemyPoint < 17; i++) {
@@ -63,6 +64,14 @@ public class Battle {
                         break;
                     }
                 }
+            }
+            if(enemyPoint >= 17){
+                System.out.println("両者の点数を確定します");
+                System.out.println("あなた"+p_math+"枚　　　合計点＿"+playerPoint);
+                System.out.println("ディーラー"+e_math+"枚　合計点＿"+enemyPoint);
+                Result = ju.judge(playerPoint,enemyPoint);
+                System.out.println(Result);
+                break;
             }
         }
     }
