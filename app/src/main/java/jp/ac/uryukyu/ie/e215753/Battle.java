@@ -27,14 +27,6 @@ public class Battle {
         
         Random random = new Random();
 
-        for (int i = 0; i<1; i++){//ディーラーの手札
-            enemyCard[i] = random.nextInt(9) +1;//ランダムでは０が出てくる可能性があるため＋１をする
-            e_math += 1;
-            if (enemyCard[i] == 1) {
-                enemyCard[i] = 11;
-            }
-            enemyPoint += enemyCard[i];
-        }
         for(int k = 0; k<2; k++){//プレイヤーの手札
             playerCard[k] = random.nextInt(9) +1;
             p_math += 1;
@@ -43,9 +35,27 @@ public class Battle {
             }
             playerPoint += playerCard[k];
         }
+
+        for (int i = 0; i<1; i++){//ディーラーの手札
+            enemyCard[i] = random.nextInt(9) +1;//ランダムでは０が出てくる可能性があるため＋１をする
+            e_math += 1;
+            if (enemyCard[i] == 1) {
+                enemyCard[i] = 11;
+            }
+            enemyPoint += enemyCard[i];
+        }
         System.out.println("あなたの最初の点数は"+ playerPoint);
         System.out.println("ディーラーの最初の点数は"+ enemyPoint);
     }
+
+    void natural(){
+        if (playerPoint == 21);{
+        System.out.println("ナチュラルブラックジャック！！");
+        System.out.println("あなたの勝利！！！！");
+        }
+    }
+
+
     /**プレイクラス
      * ヒットかスタンドを選び、半角の0か1で選択
      * ヒットを選んだ場合は、プレイヤーのカードが一枚増える
